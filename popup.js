@@ -22,6 +22,8 @@ chrome.tabs.getSelected(null,function(tab) {
 
       for(i = 0; i < 30; i++){
         var type = data[i]['type'].split("Event")[0]
+        var apiLink = data[i]['repo']['url'].split('/');
+        var link = "https://github.com/" + apiLink[4] + "/" + apiLink[5]
 
         div.insertAdjacentHTML('beforeend',
                                 "<div class='chip' style='background-color:"
@@ -30,9 +32,13 @@ chrome.tabs.getSelected(null,function(tab) {
                                 + type
                                 + "</div>")
         div.insertAdjacentHTML('beforeend',
-                              "<span style='font-size:16px'>"
+                              "<a href='"
+                              + link
+                              + "' target='_blank'>"
+                              + "<span id='repo-name'>"
                               + data[i]['repo']['name']
                               + "</span>"
+                              + "</a>"
                               + "<br>")
 
       }
