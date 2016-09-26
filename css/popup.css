@@ -7,8 +7,10 @@ a{
   text-decoration: none;
 }
 #username{
-  padding-top: 5px;
-  font-size: 30px;
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  font-size: 28px;
+  border-bottom: 1px solid #555;
 }
 .chip{
   color:#fff;
